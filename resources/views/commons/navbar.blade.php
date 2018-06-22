@@ -10,38 +10,56 @@
                 </button>
                 <a class="navbar-left" href="/">ikoo</a>
             </div>
+            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">検索<b class="caret"></b></a>
+                    <ul class="dropdown-menu multi-level">
+                    
+                        <li class="dropdown-submenu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">季節</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">春</a></li>
+                                  <li><a href="#">夏</a></li>
+                                  <li><a href="#">秋</a></li>
+                                  <li><a href="#">冬</a></li>
+                                </ul>
+                        </li>
+                          
+                        
+                        <li class="dropdown-submenu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">自然</a>
+                            <ul class="dropdown-menu">
+                                  <li><a href="#">山</a></li>
+                                  <li><a href="#">海</a></li>
+                                  <li><a href="#">川</a></li>
+                                  <li><a href="#">森</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-<!--navbar-->
+                    @if(!Auth::check())
+                        <li><a href="{{ route('signup.get') }}">新規登録</a></li>
+                        <li><a href="{{ route('login.post') }}">ログイン</a></li>
+                    @else 
+                            <!--<ul class="dropdown-menu">-->
+                                <li>
+                                    <a href="#">マイページ</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="{{ route('logout.get') }}">ログアウト</a>
+                                </li>
+                            <!--</ul>-->
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<ul class="nav navbar-nav navbar-right">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">検索<b class="caret"></b></a>
-  <ul class="dropdown-menu multi-level">
-    
-    <li class="dropdown-submenu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">季節</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">春</a></li>
-              <li><a href="#">夏</a></li>
-              <li><a href="#">秋</a></li>
-              <li><a href="#">冬</a></li>
-            </ul>
-    </li>
-      
-    
-    <li class="dropdown-submenu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">自然</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">山</a></li>
-              <li><a href="#">海</a></li>
-              <li><a href="#">川</a></li>
-              <li><a href="#">森</a></li>
-            </ul>
-    </li>
-    
-    
-  </ul>
-</ul>      
+                      
                    
                        
                         <!--<ul class="nav navbar-nav navbar-right">-->
@@ -81,22 +99,5 @@
                                
                 <!--                <span class="caret"></span>-->
                 <!--            </a>-->
-                <!--            <ul class="dropdown-menu">-->
-                <!--                <li>-->
-                <!--                    <a href="#">マイページ</a>-->
-                <!--                </li>-->
-                <!--                <li role="separator" class="divider"></li>-->
-                <!--                <li>-->
-                <!--                    <a href="#">ログアウト</a>-->
-                <!--                </li>-->
-                <!--            </ul>-->
-                <!--        </li>-->
-                   
-                <!--        <li><a href="#">新規登録</a></li>-->
-                <!--        <li><a href="#">ログイン</a></li>-->
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+
+                        <!--</li>-->

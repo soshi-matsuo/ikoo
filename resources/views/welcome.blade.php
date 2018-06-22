@@ -7,8 +7,8 @@
                 <h1>ikoo</h1>
                 <h2>そうだ、神奈川にいこう。</h2>
                 @if (!Auth::check())
-                    <a href="#" class="btn btn-success btn-lg">Signup</a>
-                    <a href="#" class="btn btn-success btn-lg">Login</a>
+                    <a href="{{ route('signup.get') }}" class="btn btn-success btn-lg">Signup</a>
+                    <a href="{{ route('login.post') }}" class="btn btn-success btn-lg">Login</a>
                 @endif
                     <a href="#" class="btn btn-success btn-lg">View</a>
             </div>
