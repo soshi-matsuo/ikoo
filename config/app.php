@@ -163,6 +163,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
+        //facadeでつまづいてググったときに出てきた解決策（なくても動く）
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
