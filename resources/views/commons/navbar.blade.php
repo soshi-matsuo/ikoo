@@ -13,7 +13,7 @@
             
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-center">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">検索<b class="caret"></b></a>
                     <ul class="dropdown-menu multi-level">
                     
