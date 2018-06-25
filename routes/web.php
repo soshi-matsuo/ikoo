@@ -24,3 +24,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 
 Route::get('home', 'WelcomeController@home')->name('home.get');
+
+Route::get('act','PlansController@act')->name('act.get');
+Route::get('scene', 'PlansController@scene')->name('scene.get');
+Route::get('gourmet', 'PlansController@gourmet')->name('gourmet.get');
