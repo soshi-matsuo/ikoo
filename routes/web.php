@@ -28,3 +28,16 @@ Route::get('home', 'WelcomeController@home')->name('home.get');
 Route::get('act','PlansController@act')->name('act.get');
 Route::get('scene', 'PlansController@scene')->name('scene.get');
 Route::get('gourmet', 'PlansController@gourmet')->name('gourmet.get');
+
+Route::resource('plans', 'PlansController', ['only' => 'show']);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => 'show']);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('want', 'UserWantController@store')->name('user.want');
+        Route::delete('unwant', 'UserWantController@destroy')->name('user.unwant');
+        
+        Route::get('wants', 'UsersController@wants')->name('users.wants');
+    });
+});
+

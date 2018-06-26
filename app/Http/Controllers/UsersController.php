@@ -28,6 +28,19 @@ class UsersController extends Controller
             'user' => $user,
                    ]);
     }
+    
+    public function wants($id)
+    {
+        $user = User::find($id);
+        $wants = $user->wants()->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'plans' => $wants,
+        ];
+
+        return view('users.wants', $data);
+    }
    
     
     

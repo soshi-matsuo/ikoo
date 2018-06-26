@@ -10,7 +10,8 @@ class PlansController extends Controller
 {
     public function gourmet()
     {
-        return view ('plans.gourmet');
+        $plans = \DB::table('plans')->where('type', 'gourmet')->paginate(3);
+        return view ('plans.gourmet', ['plans'=>$plans]);
     }
    
     public function act()
