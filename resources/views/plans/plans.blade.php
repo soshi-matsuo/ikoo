@@ -2,7 +2,7 @@
 
 @section('content')
 @foreach ($plans as $plan)
-    <?php $user = $micropost->user; ?>
+   
     <li class="media">
         <div class="media-left">
             <img class="media-object img-rounded" src="{{ $plan->image_url }}" alt="">
