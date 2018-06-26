@@ -23,7 +23,7 @@ class PlansController extends Controller
         return view ('plans.scene');
     }
 
-}
+
 
     public function show($id)
     {
@@ -34,5 +34,6 @@ class PlansController extends Controller
             'plan' => $plan
         ]);
     }
-}
 
+
+}
