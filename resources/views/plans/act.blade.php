@@ -8,6 +8,11 @@
                 <li role="presentation" class="{{ Request::is('scene') ? 'active' : '' }}"><a href="{{ route('scene.get') }}">Scene</a></li>
                 <li role="presentation" class="{{ Request::is('gourmet') ? 'active' : '' }}"><a href="{{ route('gourmet.get') }}">Gourmet</a></li>
             </ul>
+            @if (count($plans) > 0)
+                <div class="form-group">
+                    @include('plans.plans', ['plans' => $plans])
+                </div>
+            @endif
         </div>
     </div>
 @endsection

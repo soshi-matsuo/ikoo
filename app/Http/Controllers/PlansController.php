@@ -16,12 +16,16 @@ class PlansController extends Controller
    
     public function act()
     {
-        return view ('plans.act');   
+        $plans = \DB::table('plans')->where('type', 'act')->paginate(3);
+        return view ('plans.act', ['plans'=>$plans]);
+           
     }
     
     public function scene()
     {
-        return view ('plans.scene');
+        $plans = \DB::table('plans')->where('type', 'scene')->paginate(3);
+        return view ('plans.scene', ['plans'=>$plans]);
+        
     }
 
 
