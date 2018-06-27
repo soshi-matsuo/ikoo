@@ -6,6 +6,7 @@
             <div class="cover-contents">
                 <h1>{{ $plan->name }}</h1>
                 <h2>{{ $plan->content }}</h2>
+                
                 <img src="{{ $plan->image_url }}">
 
                 <table border="1">
@@ -27,7 +28,6 @@
                     <p>口コミが入る？</p>
                 </div>
                 
-                  <!--{!! Form::open(['route' => '#']) !!}-->
                     <p>口コミ投稿</p>
                       <div class="form-group">
                           <form type="textarea"></form>

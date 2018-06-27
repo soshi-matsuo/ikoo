@@ -9,32 +9,43 @@
         <div class="status text-center">
             <ul>
                 <li>
-                    <div class="">Gourmet</div>
+                    <div class="text-center">Gourmet</div>
                     @foreach ($plans as $plan)
                     <div id="" class="">
-                        {{ $plan->where('type', 'gourmet') }}
+                        @if ($plan->type=='gourmet')
+                                 @include('plans.plans', ['plans' => $plans])
+                                 <!--{!! $plans->render() !!}-->
+                        @endif
                     </div>
                     @endforeach
                 </li>
+                <br>
                 <li>
-                    <div class="">Scene</div>
+                    <div class="text-center">Scene</div>
                      @foreach ($plans as $plan)
                     <div id="" class="">
-                         {{ $plan->where('type', 'scene') }}
+                        @if ($plan->type=='scene')
+                                 @include('plans.plans', ['plans' => $plans])
+                                 <!--{!! $plans->render() !!}-->
+                        @endif  
                     </div>
                     @endforeach
                 </li>
+                <br>
                 <li>
-                    <div class="">Activity</div>
+                    <div class="text-center">Activity</div>
                     @foreach ($plans as $plan)
                     <div id="" class="">
-                        {{  $plan->where('type', 'act') }}
+                        @if ($plan->type=='act')
+                                 @include('plans.plans', ['plans' => $plans])
+                                 <!--{!! $plans->render() !!}-->
+                        @endif
                     </div>
                     @endforeach
                 </li>
+                
             </ul>
         </div>
     </div>
-    @include('plans.plans', ['plans' => $plans])
-    {!! $plans->render() !!}
+   
 @endsection

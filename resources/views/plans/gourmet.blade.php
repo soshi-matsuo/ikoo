@@ -9,10 +9,15 @@
                 <li role="presentation" class="{{ Request::is('gourmet') ? 'active' : '' }}"><a href="{{ route('gourmet.get') }}">Gourmet</a></li>
             </ul>
             @if (count($plans) > 0)
+            @foreach($plans as $plan)
                 <div class="form-group">
+                    @if($plan->type=='gourmet')
                     @include('plans.plans', ['plans' => $plans])
+                    @endif
                 </div>
+            @endforeach
             @endif
+        
         </div>
     </div>
 @endsection

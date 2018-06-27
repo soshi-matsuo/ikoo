@@ -19,31 +19,14 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        
-        $plans = \DB::table('plan_user')->join('plans', 'plan_user.plan_id', '=', 'plans.id')->select('plans.*', \DB::raw('COUNT(*) as count'))->where('type', 'want')->groupBy('plans.id', 'plans.name', 'plans.image_url', 'plans.content','plans.created_at', 'plans.updated_at')->take(10)->get();
         $user = User::find($id);
+        $plans= $user->wants()->paginate(10);
         
         return view('users.show', [
             'plans' => $plans,
             'user' => $user,
                    ]);
     }
-    
-    public function wants($id)
-    {
-        $user = User::find($id);
-        $wants = $user->wants()->paginate(10);
-
-        $data = [
-            'user' => $user,
-            'plans' => $wants,
-        ];
-
-        return view('users.wants', $data);
-    }
-   
-    
-    
 }
 
 
